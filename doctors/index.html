@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Doctors App</title>
+    <script>
+        window.onload = function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            // UPDATE THESE WITH YOUR DOCTORS APP STORE LINKS
+            var iosUrl = "https://apps.apple.com/us/app/timepe-doctors/id6746335363"; 
+            var androidUrl = "https://play.google.com/store/apps/details?id=com.queue.timepedoctors"; 
+            var desktopFallback = "https://www.gotimepe.com";
+
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = iosUrl;
+            } else if (/android/i.test(userAgent)) {
+                window.location.href = androidUrl;
+            } else {
+                window.location.href = desktopFallback;
+            }
+        };
+    </script>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 50px; font-family: sans-serif;">
+        <p>Redirecting to the Doctors App Store...</p>
+    </div>
+</body>
+</html>
