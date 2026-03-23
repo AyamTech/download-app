@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Downloading App...</title>
+    <script>
+        window.onload = function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            var iosUrl = "https://apps.apple.com/in/app/timepe-patient/id6746335595"; // Replace with your iOS Link
+            var androidUrl = "https://play.google.com/store/apps/details?id=com.queue.patient"; // Replace with your Android Link
+            var desktopFallback = "https://www.gotimepe.com"; // Where to send laptop users
+
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = iosUrl;
+            } else if (/android/i.test(userAgent)) {
+                window.location.href = androidUrl;
+            } else {
+                window.location.href = desktopFallback;
+            }
+        };
+    </script>
+</head>
+<body>
+    <p>Redirecting to the App Store...</p>
+</body>
+</html>
